@@ -1,6 +1,6 @@
 <?php
 
-namespace teezer\models;
+namespace app\models;
 
 class Character extends \Illuminate\Database\Eloquent\Model{
     
