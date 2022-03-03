@@ -18,7 +18,10 @@ $db->bootEloquent(); //On lance Eloquent
 
 $rq = new Requete();
 
+foreach
 $rq->requete1();
+
+
 $rq->requete2();
 $rq->requete3();
 $rq->requete4();
