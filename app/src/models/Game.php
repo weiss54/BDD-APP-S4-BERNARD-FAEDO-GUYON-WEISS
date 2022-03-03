@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-class Game
+class Game extends \Illuminate\Database\Eloquent\Model
 {
 
     public $timestamps = false;
