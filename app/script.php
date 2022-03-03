@@ -6,7 +6,9 @@ use Illuminate\Database\Capsule\Manager as DB;
 
 $db = new DB();
 
-$db->addConnection(IntegrateurBDD::$dbconfig);
+$db->addConnection(parse_ini_file("db.config.ini"));
  
 $db->setAsGlobal();
 $db->bootEloquent(); //On lance Eloquent
+
+
