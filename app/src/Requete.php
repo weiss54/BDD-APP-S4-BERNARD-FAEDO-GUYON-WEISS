@@ -16,6 +16,21 @@ class Requete
         return Compagny::where('location_country', '=', 'Japan')->get();
     }
 
+    public function requete3()
+    {
+        return null;
+    }
+
+    public function requete4()
+    {
+        return null;
+    }
+
+    public function requete5()
+    {
+        return null;
+}
+
 
 
 }
