@@ -18,11 +18,13 @@ $db->bootEloquent(); //On lance Eloquent
 
 $rq = new Requete();
 
-foreach
-$rq->requete1();
+foreach ($rq->requete1() as $key => $value) {
+    echo $value->id;
+}
 
 
+/*
 $rq->requete2();
 $rq->requete3();
 $rq->requete4();
-$rq->requete5();
+$rq->requete5();*/
