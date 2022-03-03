@@ -4,6 +4,7 @@ namespace app;
 
 use app\models\Game;
 use app\models\Compagny;
+use app\models\Platform;
 
 class Requete
 {
@@ -18,12 +19,12 @@ class Requete
 
     public function requete3()
     {
-        return null;
+        return Platform ::Where('install_base', '>=', '10000000')->get();
     }
 
     public function requete4()
     {
-        return null;
+        return Game::where('id', '>=', '21173')->limit(442);
     }
 
     public function requete5()
