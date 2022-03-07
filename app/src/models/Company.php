@@ -2,11 +2,11 @@
 
 namespace app\models;
 
-class Compagny extends \Illuminate\Database\Eloquent\Model{
+class Company extends \Illuminate\Database\Eloquent\Model{
     
     public $timestamps = false;
 
-    protected $table = 'compagny';
+    protected $table = 'company';
     protected $primaryKey = 'id';
     
     /*

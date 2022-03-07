@@ -3,7 +3,7 @@
 namespace app;
 
 use app\models\Game;
-use app\models\Compagny;
+use app\models\Company;
 use app\models\Platform;
 
 class Requete
@@ -14,23 +14,23 @@ class Requete
     }
 
     public function requete2(){
-        return Compagny::where('location_country', '=', 'Japan')->get();
+        return Company::select('name')->where('location_country', '=', 'Japan')->get();
     }
 
     public function requete3()
     {
-        return Platform ::Where('install_base', '>=', '10000000')->get();
+        return Platform::select('name')->Where('install_base', '>=', '10000000')->get();
     }
 
     public function requete4()
     {
-        return Game::where('id', '>=', '21173')->limit(442);
+        return Game::select('name', 'id')->where('id', '>=', '21173')->limit(442)->get();
     }
 
     public function requete5()
     {
-        return null;
-}
+        return Game::select('name', 'deck')->limit(500)->get();
+    }
 
 
 
