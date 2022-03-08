@@ -1,0 +1,1 @@
+select * from photo natural join annonce where annonce.id = 22;
