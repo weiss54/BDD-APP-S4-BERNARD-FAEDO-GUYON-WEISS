@@ -6,7 +6,7 @@ class Photo extends \Illuminate\Database\Eloquent\Model{
     
     public $timestamps = false;
 
-    protected $table = 'Annonce';
+    protected $table = 'Photo';
     protected $primaryKey = 'id';
     
     
