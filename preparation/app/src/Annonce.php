@@ -11,7 +11,7 @@ class Annonce extends \Illuminate\Database\Eloquent\Model{
     
     
     public function photos() {
-        return $this->hasMany('td2prep\models\Photo', 'id'); //Dans ce cas là on utilisera hasMany
+        return $this->hasMany('td2prep\models\Photo', 'id_annonce'); //Dans ce cas là on utilisera hasMany
     }
     
 }
