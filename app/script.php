@@ -32,7 +32,7 @@ foreach ($rq->requete3() as $value) {
 $nb = 1;
 echo "\nRequete 4: Lister 442 jeux à partir du 21173ème.\n";
 foreach ($rq->requete4() as $value) {
-    echo $nb.". ".$value->name."(id: ".$value->id."\n";
+    echo $nb.". ".$value->name."(id: ".$value->id.")\n";
     $nb++;
 }
 $nb = 1;
