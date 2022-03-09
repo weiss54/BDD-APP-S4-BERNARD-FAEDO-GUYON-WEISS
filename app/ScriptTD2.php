@@ -20,12 +20,19 @@ $requete->requete1();
 
 /** QUESTION 2 **/
 
-//$requete->requete2();
+$requete->requete2();
 
 /** QUESTION 3 **/
 
-//$requete->requete3();
+$requete->requete3();
+
+/** QUESTION 4 **/
+
+$requete->requete4();
 
 /** QUESTION 5 **/
 
 $requete->requete5();
+
+
+
