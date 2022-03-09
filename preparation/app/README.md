@@ -10,4 +10,5 @@
 # CORRECTION
 
 ## 3)3) Annonce::has('photos', '>', 3)->get()
-## 3)4) Annonce::whereHas('photos', function($q){$q->where('totale_octet', '>', '100000');})->get();
+## 3)4) Annonce::whereHas('photos', function($q){$q->where('totale_octet', '>', '100000');})->get()
+## Les deux requetes au-dessus mais en version Eloquent
