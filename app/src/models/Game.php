@@ -11,6 +11,6 @@ class Game extends \Illuminate\Database\Eloquent\Model
 
     
     public function personnagesPremierJeu(){
-        return $this->hasMany('\models\Character', 'first_appeared_in_game_id');
+        return $this->hasMany('app\models\Character', 'first_appeared_in_game_id');
     }
 }

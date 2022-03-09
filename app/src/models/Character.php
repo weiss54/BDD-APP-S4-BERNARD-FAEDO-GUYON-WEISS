@@ -11,7 +11,7 @@ class Character extends \Illuminate\Database\Eloquent\Model{
     
     
     public function game(){
-        return $this->belongsTo('\models\Game', 'id');
+        return $this->belongsTo('app\models\Game', 'id');
     }
     
 }
