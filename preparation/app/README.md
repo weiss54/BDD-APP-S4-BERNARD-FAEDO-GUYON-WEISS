@@ -6,3 +6,9 @@
 ## 5) Voir les requetes qui suit
 * insert into CategorieAnnonce values (42, 22);
 * insert into CategorieAnnonce values (73, 22);
+
+# CORRECTION
+
+## 3)3) Annonce::has('photos', '>', 3)->get()
+## 3)4) Annonce::whereHas('photos', function($q){$q->where('totale_octet', '>', '100000');})->get()
+## Les deux requetes au-dessus mais en version Eloquent
