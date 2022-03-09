@@ -13,7 +13,7 @@ class RequeteTD{
      */
     public function requete1()
     {
-        echo "\n\nRequete 1";
+        echo "\n\nRequete 1\n";
         $jeu = Game::find(12342);
         $rq = $jeu->personnagesDuJeu()->get();
         foreach ($rq as $value) {
@@ -38,13 +38,14 @@ class RequeteTD{
     }
 
     /**
-     * Les personnages des jeux dont le nom (du jeu) débute par 'Mario'
+     * Les jeux dont les developpeurs ont 'Sony' dans leurs noms
      */
     public function requete3()
     {
-        echo "\n\nRequete 3";
-        $company = Company::where('name', 'like', '%Sony%');
+        echo "\n\nRequete 3\n";
+        $company = Company::where('name', 'like', '%Sony%')->get();
         foreach ($company as $value) {
+            $value->name;
             $resJeu = $value->jeuDeveloppeParLaCompany()->get();
             foreach ($resJeu as $valueJeu) {
                 echo "- " . $valueJeu->name."\n";
@@ -53,7 +54,7 @@ class RequeteTD{
 
     }
 
-    
+
     public function requete4()
     {
         echo "\n\nRequete 4";
