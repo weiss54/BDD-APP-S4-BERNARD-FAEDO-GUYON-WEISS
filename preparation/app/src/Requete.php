@@ -14,7 +14,7 @@ class Requete
     }
 
     public function requete1v2() {
-        return Annonce->hasMany()->where('id', '22')->get();
+        return Annonce::photos()->where('id', '22')->get();
     }
 
     public function requete2() {
@@ -22,15 +22,15 @@ class Requete
     }
 
     public function requete2v2() {
-        return Annonce->hasMany()->where('id', '22')->where('taille_octet', '>', '100000')->get();
+        return Annonce::photos()->where('id', '22')->where('taille_octet', '>', '100000')->get();
     }
 
     public function requete3() {
-        return Photo->annonce()->groupeBy('count')->having('count', '>', '3')->get();
+        return Photo::annonce()->groupeBy('count')->having('count', '>', '3')->get();
     }
 
     public function requete4() {
-        return Photo->annonce()->where('taille_octet', '>', '100000')->get();
+        return Photo::annonce()->where('taille_octet', '>', '100000')->get();
     }
 
 }
