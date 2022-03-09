@@ -35,13 +35,19 @@ $requete->requete4();
 $requete->requete5();
 
 /** QUESTION 6 **/
+
 $requete->requete6();
 
 /** QUESTION 7 **/
 
 $requete->requete7();
 
+/** QUESTION 8 **/
+
+$requete->requete8();
+
 /** QUESTION 9 **/
 
 $requete->requete9();
+
 
