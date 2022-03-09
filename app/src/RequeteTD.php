@@ -5,8 +5,7 @@ namespace app;
 use app\models\Character;
 use app\models\Game;
 
-class RequeteTD
-{
+class RequeteTD{
 
     /**
      * Afficher (name , deck) les personnages du jeu 12342
