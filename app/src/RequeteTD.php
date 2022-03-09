@@ -27,8 +27,8 @@ class RequeteTD{
     public function requete2()
     {
         echo "\n\nRequete 2";
-        $game = Game::where('name', 'like', 'Mario%')->get();
-        foreach ($game as $value) {
+        $games = Game::where('name', 'like', 'Mario%')->get();
+        foreach ($games as $value) {
             $resPersonnages = $value->personnagesDuJeu()->get();
             foreach ($resPersonnages as $valuePersonnages) {
                 echo "- " . $valuePersonnages->name."\n";
@@ -51,6 +51,24 @@ class RequeteTD{
             }
         }
 
+    }
+
+    
+    public function requete4()
+    {
+        echo "\n\nRequete 4";
+        $games = Game::where('name', 'like', '%Mario%')->get();
+        foreach($games as $game){
+            $ratings = $game->ratings()->get();
+            echo "---> " . $game->name."\n";
+
+            foreach($ratings as $rating){
+                $boards = $rating->ratingBoard()->get();
+                foreach($boards as $board){
+                echo " * " . $rating->name." (".$board->name.")\n";
+                }
+            }
+        }
     }
 
 }

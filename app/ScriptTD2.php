@@ -16,8 +16,11 @@ $requete = new RequeteTD();
 
 /** QUESTION 1 **/
 
-$requete->requete1();
+//$requete->requete1();
 
 /** QUESTION 2 **/
 
-$requete->requete2();
+//$requete->requete2();
+
+/**QUESTION 4 **/
+$requete->requete4();

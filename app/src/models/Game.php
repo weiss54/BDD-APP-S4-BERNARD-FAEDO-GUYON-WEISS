@@ -20,4 +20,8 @@ class Game extends \Illuminate\Database\Eloquent\Model
     public function personnagesPremierJeu(){
         return $this->hasMany('app\models\Character', 'first_appeared_in_game_id');
     }
+
+    public function ratings(){
+        return $this->belongsToMany('app\models\GameRating', 'game2rating', 'game_id', 'rating_id');
+    }
 }
