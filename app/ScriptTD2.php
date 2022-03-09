@@ -29,3 +29,16 @@ $requete->requete3();
 /** QUESTION 4 **/
 
 $requete->requete4();
+
+
+
+
+
+
+
+
+
+
+/** QUESTION 6 **/
+
+$requete->requete6();

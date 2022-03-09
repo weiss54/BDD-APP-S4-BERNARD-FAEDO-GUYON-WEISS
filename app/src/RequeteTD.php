@@ -72,4 +72,27 @@ class RequeteTD{
         }
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+    public function requete6(){
+        echo "\n\nRequete 6\n";
+        $games = Game::where('name', 'like', 'Mario%');
+        $res = $games->whereHas('ratings', function($q){
+            $q->where ('name', 'like', '%3+%');
+        })->get();
+        foreach($res as $game){
+            echo "---> " . $game->name."\n"; 
+        }
+    }
+
 }
