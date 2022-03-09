@@ -40,4 +40,8 @@ $requete->requete1();
 
 /** QUESTION 7 **/
 
-$requete->requete7();
+//$requete->requete7();
+
+/** QUESTION 8 **/
+
+$requete->requete8();

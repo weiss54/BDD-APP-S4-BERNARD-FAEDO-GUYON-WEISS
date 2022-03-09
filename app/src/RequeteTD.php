@@ -116,5 +116,26 @@ class RequeteTD{
             echo "---> " . $game->name. "\n";
         }
     }
+
+     /**
+     * les jeux dont le nom débute par Mario, publiés par une compagnie dont le nom contient
+     * "Inc." et dont le rating initial contient "3+"
+     */
+
+     //Ya un pb là
+    public function requete8(){
+        echo "\n\nRequete 8\n";
+        $res = Game::whereHas('publieursDuJeu', function($q){
+            $q->where ('name', 'like', '%Inc.%');
+        })->whereHas('ratings', function($q){
+            $q->where ('name', 'like', '%3+%')->whereHas('ratingBoard', function($q2){
+                $q2->where ('name', '=', 'CERO');
+            });
+        })->get();
+
+        foreach($res as $game){
+            echo "---> " . $game->name. "\n";
+        }
+    }
     
 }
