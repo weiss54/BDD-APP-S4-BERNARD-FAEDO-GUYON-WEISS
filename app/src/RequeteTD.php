@@ -27,7 +27,7 @@ class RequeteTD
     public function requete2()
     {
         echo "\n\nRequete 2";
-        $game = Game::where('name', 'like', '%Mario%')->get();
+        $game = Game::where('name', 'like', 'Mario%')->get();
         foreach ($game as $value) {
             $resPersonnages = $value->personnagesDuJeu()->get();
             foreach ($resPersonnages as $valuePersonnages) {
