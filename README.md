@@ -1,5 +1,7 @@
-## Modele relationnel
-
+# BDD-APP-S4-BERNARD-FAEDO-GUYON-WEISS
+## Partie 1
+### 1) Voir image "modele_UML.png"
+### 2) Modele relationniel
 * Jeu (idJeu, nom, dateSortieAttendue, dateSortieInit, decriptionLongue, descriptionCourte,
 * Genre (idGenre, nom, descriptionCourte, descriptionLongue)
 * Theme (idTheme, nom)
@@ -16,3 +18,6 @@
 * Personnage (idPersonnage, nom, alias, nomReel, nomFamille, dateNaissance, genre, descriptionCourte, descriptionLongue, #idPremierJeu)
 * JeuPersonnage (#idJeu, #idPersonnage)
 * RelationPersonnage(#idPersonnage1, #idPersonnage2, relation)
+## 3) réaliser en localhost
+## Partie 2
+### Voir le fichier Requete.php
