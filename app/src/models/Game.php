@@ -28,4 +28,8 @@ class Game extends \Illuminate\Database\Eloquent\Model
     public function genres() {
         return $this->belongsToMany('app\models\Genre', 'game2genre', 'game_id', 'genre_id');
     }
+    
+    public function publieursDuJeu(){
+        return $this->belongsToMany('app\models\Company', 'game_publishers', 'game_id', 'comp_id');
+    }
 }
