@@ -5,6 +5,8 @@ namespace app;
 use app\models\Character;
 use app\models\Company;
 use app\models\Game;
+use app\models\Genre;
+
 
 class RequeteTD{
 
@@ -100,4 +102,18 @@ class RequeteTD{
         }
     }
     
+
+    public function requete9(){
+        echo "\n\nRequete 9\n";
+        $genre = new Genre();
+        $genre->name = "Leo";
+        $genre->description = "requete9";
+        $genre->save();
+
+        $g1 = Game::find(12);
+        $g1->genres()->save($genre);       
+        Game::find(56)->genres()->save($genre);
+        Game::find(345)->genres()->save($genre);
+        echo "requete9 terminer";
+    }
 }

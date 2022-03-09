@@ -37,3 +37,8 @@ $requete->requete5();
 /** QUESTION 6 **/
 
 $requete->requete6();
+
+
+/** QUESTION 9 **/
+
+$requete->requete9();
