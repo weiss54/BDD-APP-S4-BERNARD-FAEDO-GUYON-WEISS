@@ -9,7 +9,10 @@ class Game extends \Illuminate\Database\Eloquent\Model
     protected $table = 'game';
     protected $primaryKey = 'id';
 
-    
+    public function personnagesDuJeu() {
+        return $this->belongsToMany('app\models\Character', 'game2character', 'id', 'id');
+    }
+
     public function personnagesPremierJeu(){
         return $this->hasMany('app\models\Character', 'first_appeared_in_game_id');
     }
