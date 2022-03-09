@@ -21,3 +21,7 @@ $requete->requete1();
 /** QUESTION 2 **/
 
 $requete->requete2();
+
+/** QUESTION 3 **/
+
+$requete->requete3();

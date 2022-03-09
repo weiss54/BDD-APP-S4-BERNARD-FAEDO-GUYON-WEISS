@@ -38,13 +38,14 @@ class RequeteTD{
     }
 
     /**
-     * Les personnages des jeux dont le nom (du jeu) débute par 'Mario'
+     * Les jeux dont les developpeurs ont 'Sony' dans leurs noms
      */
     public function requete3()
     {
         echo "\n\nRequete 3";
-        $company = Company::where('name', 'like', '%Sony%');
+        $company = Company::where('name', 'like', '%Sony%')->get();
         foreach ($company as $value) {
+            $value->name;
             $resJeu = $value->jeuDeveloppeParLaCompany()->get();
             foreach ($resJeu as $valueJeu) {
                 echo "- " . $valueJeu->name."\n";

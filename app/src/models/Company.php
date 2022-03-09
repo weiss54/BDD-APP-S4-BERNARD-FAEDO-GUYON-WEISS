@@ -15,7 +15,7 @@ class Company extends \Illuminate\Database\Eloquent\Model{
     }*/
 
     public function jeuDeveloppeParLaCompany(){
-        return $this->belongsToMany('app\models\Game', 'game_developpers', 'comp_id', 'game_id');
+        return $this->belongsToMany('app\models\Game', 'game_developers', 'comp_id', 'game_id');
     }
     
 }
