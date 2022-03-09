@@ -13,7 +13,7 @@ class RequeteTD{
      */
     public function requete1()
     {
-        echo "\n\nRequete 1";
+        echo "\n\nRequete 1\n";
         $jeu = Game::find(12342);
         $rq = $jeu->personnagesDuJeu()->get();
         foreach ($rq as $value) {
@@ -26,7 +26,7 @@ class RequeteTD{
      */
     public function requete2()
     {
-        echo "\n\nRequete 2";
+        echo "\n\nRequete 2\n";
         $game = Game::where('name', 'like', 'Mario%')->get();
         foreach ($game as $value) {
             $resPersonnages = $value->personnagesDuJeu()->get();
@@ -42,7 +42,7 @@ class RequeteTD{
      */
     public function requete3()
     {
-        echo "\n\nRequete 3";
+        echo "\n\nRequete 3\n";
         $company = Company::where('name', 'like', '%Sony%')->get();
         foreach ($company as $value) {
             $value->name;
