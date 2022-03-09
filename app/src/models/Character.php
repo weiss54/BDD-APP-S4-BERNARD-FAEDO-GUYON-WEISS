@@ -13,4 +13,8 @@ class Character extends \Illuminate\Database\Eloquent\Model
         return $this->belongsToMany('app\models\Game', 'game2character', 'id', 'id');
     }
 
+    public function premierJeu(){
+        return $this->belongsTo('app\models\Game', 'id');
+    }
+    
 }
