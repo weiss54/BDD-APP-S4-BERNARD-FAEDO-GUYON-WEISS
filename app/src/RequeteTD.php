@@ -54,4 +54,16 @@ class RequeteTD{
 
     }
 
+    /**
+     * Les jeux dont les developpeurs ont 'Sony' dans leurs noms
+     */
+    public function requete5()
+    {
+        echo "\n\nRequete 5\n";
+        $game = Game::where('name', 'like', 'Mario%')->has('personnagesDuJeu', '>', 3)->get();
+        foreach ($game as $value) {
+            echo "- " .$value->name . "\n";   
+        }
+    }
+
 }
