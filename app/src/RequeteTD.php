@@ -3,6 +3,7 @@
 namespace app;
 
 use app\models\Character;
+use app\models\Company;
 use app\models\Game;
 
 class RequeteTD{
