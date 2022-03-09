@@ -54,7 +54,9 @@ class RequeteTD{
 
     }
 
-
+    /**
+     * Le rating initial (indiquer le rating board) des jeux dont le nom contient Mario
+     */
     public function requete4()
     {
         echo "\n\nRequete 4";
@@ -72,18 +74,21 @@ class RequeteTD{
         }
     }
 
+    /**
+     * Les jeux dont les developpeurs ont 'Sony' dans leurs noms
+     */
+    public function requete5()
+    {
+        echo "\n\nRequete 5\n";
+        $game = Game::where('name', 'like', 'Mario%')->has('personnagesDuJeu', '>', 3)->get();
+        foreach ($game as $value) {
+            echo "- " .$value->name . "\n";   
+        }
+    }
 
-
-
-
-
-
-
-
-
-
-
-
+    /**
+     * Les jeux dont le nom débute par Mario et dont le rating initial contient "3+"
+     */
     public function requete6(){
         echo "\n\nRequete 6\n";
         $games = Game::where('name', 'like', 'Mario%');
@@ -91,8 +96,8 @@ class RequeteTD{
             $q->where ('name', 'like', '%3+%');
         })->get();
         foreach($res as $game){
-            echo "---> " . $game->name."\n"; 
+            echo "---> " . $game->name."\n";
         }
     }
-
+    
 }
