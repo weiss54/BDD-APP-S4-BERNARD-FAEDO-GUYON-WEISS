@@ -20,7 +20,7 @@ class RequeteTD{
         $rq = $jeu->personnagesDuJeu()->get();
         $time_end = microtime(true);
         $time = $time_end - $time_start;
-        echo "time : " . $time;
+        echo "time : " . $time . " seconds";
     }
 
     /**
@@ -36,7 +36,7 @@ class RequeteTD{
         }
         $time_end = microtime(true);
         $time = $time_end - $time_start;
-        echo "time : " . $time;
+        echo "time : " . $time . " seconds";
 
     }
 
@@ -54,7 +54,7 @@ class RequeteTD{
         }
         $time_end = microtime(true);
         $time = $time_end - $time_start;
-        echo "time : " . $time;
+        echo "time : " . $time . " seconds";
 
     }
 
@@ -74,7 +74,7 @@ class RequeteTD{
         }
         $time_end = microtime(true);
         $time = $time_end - $time_start;
-        echo "time : " . $time;
+        echo "time : " . $time . " seconds";
     }
 
     /**
@@ -87,7 +87,7 @@ class RequeteTD{
         $game = Game::where('name', 'like', 'Mario%')->has('personnagesDuJeu', '>', 3)->get();
         $time_end = microtime(true);
         $time = $time_end - $time_start;
-        echo "time : " . $time;
+        echo "time : " . $time . " seconds";
     }
 
     /**
@@ -102,7 +102,7 @@ class RequeteTD{
         })->get();
         $time_end = microtime(true);
         $time = $time_end - $time_start;
-        echo "time : " . $time;
+        echo "time : " . $time . " seconds";
     }
 
      /**
@@ -119,7 +119,7 @@ class RequeteTD{
         })->get();
         $time_end = microtime(true);
         $time = $time_end - $time_start;
-        echo "time : " . $time;
+        echo "time : " . $time . " seconds";
 
     }
 
@@ -141,7 +141,7 @@ class RequeteTD{
         })->get();
         $time_end = microtime(true);
         $time = $time_end - $time_start;
-        echo "time : " . $time;
+        echo "time : " . $time . " seconds";
 
     }
     
