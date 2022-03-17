@@ -34,11 +34,19 @@ $requete->requeteListerJeuxNomDebutePar("Mario");
 print "\nJeux commençant par Sony\n";
 $requete->requeteListerJeuxNomDebutePar("Sony");
 print "\nJeux commençant par Zelda\n";
-$requete->requeteListerJeuxNomDebutePar("Zelda");*/
+$requete->requeteListerJeuxNomDebutePar("Zelda");
 
 print "\n\nJeux contenant Mario\n";
 $requete->requeteListerJeuxNomContient("Mario");
 print "\nJeux contenant Sony\n";
 $requete->requeteListerJeuxNomContient("Sony");
 print "\nJeux contenant Zelda\n";
-$requete->requeteListerJeuxNomContient("Zelda");
+$requete->requeteListerJeuxNomContient("Zelda");*/
+
+
+print "\n\nCompgnies dans le Washington\n";
+$requete->requetCompagnieDansPays("Washington");
+print "\n\nCompgnies dans le Washington\n";
+$requete->requetCompagnieDansPays("Vietnam");
+print "\n\nCompgnies dans le Washington\n";
+$requete->requetCompagnieDansPays("USA");
