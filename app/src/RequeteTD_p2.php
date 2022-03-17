@@ -14,8 +14,6 @@ class RequeteTD_p2
     public function requete1() {
         $res = Game::select('name')->where('name', 'like', '%Mario%')->get();
         
-        return $res;
-        
     }
 
     public function requete2()
@@ -25,13 +23,26 @@ class RequeteTD_p2
         return $rq;
     }
 
-    PUBLIC function requete3(){
+    public function requete3(){
         $jeux = Game::select('name')->where('name', 'like', '%Mario%')->get();
-        foreach ($jeux as $key => $value) {
-            echo $value->personnagesPremierJeu();
+        foreach ($jeux as $key => $jeu) {
+            $personnages = $jeu->personnagesPremierJeu()->get();
+            echo $personnages;
+            foreach($personnages as $key => $personnage) {
+               echo $personnage->name;
+            } 
         }
+    }
 
-        return $res;
+    public function requete4(){
+        $jeux = Game::select('name')->where('name', 'like', '%Mario%')->get();
+        foreach ($jeux as $key => $jeu) {
+            $personnages = $jeu->personnagesPremierJeu()->get();
+            echo $personnages;
+            foreach($personnages as $key => $personnage) {
+               echo $personnage->name;
+            } 
+        }
     }
 
     /*public function requete2(){
