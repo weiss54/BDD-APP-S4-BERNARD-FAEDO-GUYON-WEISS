@@ -184,5 +184,13 @@ class RequeteTD{
         echo "time : " . $time;
     }
 
+    public function requetCompagnieDansPays($pays)
+    {
+        $time_start = microtime(true);
+        $compagnies = Company::where('location_country', 'like', '%'.$pays.'%')->get();
+        $time_end = microtime(true);
+        $time = $time_end - $time_start;
+        echo "time : " . $time;
+    }
 
 }
