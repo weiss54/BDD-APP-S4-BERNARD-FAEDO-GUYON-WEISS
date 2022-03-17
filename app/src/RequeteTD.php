@@ -9,7 +9,6 @@ use app\models\Genre;
 
 
 class RequeteTD{
-
     /**
      * Afficher (name , deck) les personnages du jeu 12342
      */
