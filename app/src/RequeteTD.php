@@ -189,9 +189,6 @@ class RequeteTD{
         $time_start = microtime(true);
         $compagnies = Company::where('location_country', '=', $pays)->get();
         $time_end = microtime(true);
-        foreach ($compagnies as $value) {
-            echo $value->name;
-        }
         $time = $time_end - $time_start;
         echo "time : " . $time;
     }
