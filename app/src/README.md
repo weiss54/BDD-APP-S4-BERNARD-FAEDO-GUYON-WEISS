@@ -51,4 +51,31 @@ create index `indexGame` on `game` (`name`);
     time : 1.8050620555878
 ```
 #### Ce qu'on remarque
-On remarque que l'index n'a pas d'impact dans la vitesse d'éxecution
+On remarque que l'index n'a pas d'impact dans la vitesse d'exécution.
+En effet, à cause du fait que la clause where de la requête est sur le contenu du nom d'un jeu et non sur le début du nom d'un jeu, l'index ne sers pas et donc, le temps d'exécution n'a pas pu être diminué.
+### Etude de la requête : "Liste des compagnies d'un pays(location_country)"
+#### Avant la création de l'index
+```
+- Compagnies au Japan.
+        time : 0.059952974319458
+- Compagnies au Vietnam.
+        time : 0.012576103210449
+- Compagnies au USA.
+        time : 0.014940977096558
+```
+#### Creation de l'index dans phpMyAdmin
+```sql
+create index `indexCompany` on `company` (`location_country`);
+```
+#### Après la création de l'index
+```
+- Compagnies au Japan.
+        time : 0.039494037628174
+- Compagnies au Vietnam.
+        time : 0.00077414512634277
+- Compagnies au USA.
+        time : 0.00077414512634277
+```
+#### Ce qu'on remarque
+On remarque qu'avec l'index, le temps d'exécution a beaucoup diminué. On constate donc que l'index sur les pays a grandement accéléré le temps d'exécution.
+Cependant, à cause d'une mauvaise manipulation, on avait créer l'index sur le nom d'une company, et le constat nous avais montré que le temps d'exécution des requêtes n'avais pas varié, car l'index n'avait pas d'utilité pour simplifier le select.
