@@ -1,6 +1,6 @@
 # TD3 PARTIE I
 ## Question 1
-Lancer le script "ScriptTD2.php"
+Lancer le script "ScriptTD3.php"
 ## Question 2
 ### Etude de la requête : "Lister les jeux dont le nom débute par \<valeur\>"
 #### Avant la création de l'index
