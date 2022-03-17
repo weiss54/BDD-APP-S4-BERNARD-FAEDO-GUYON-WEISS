@@ -44,9 +44,9 @@ print "\nJeux contenant Zelda\n";
 $requete->requeteListerJeuxNomContient("Zelda");*/
 
 
-print "\n\nCompgnies dans le Washington\n";
+print "\n\nCompgnies au Washington\n";
 $requete->requetCompagnieDansPays("Washington");
-print "\n\nCompgnies dans le Washington\n";
+print "\n\nCompgnies au Vietnam\n";
 $requete->requetCompagnieDansPays("Vietnam");
-print "\n\nCompgnies dans le Washington\n";
+print "\n\nCompgnies au USA\n";
 $requete->requetCompagnieDansPays("USA");
