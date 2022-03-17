@@ -14,6 +14,7 @@ $db->bootEloquent(); //On lance Eloquent
 
 $requete = new RequeteTD();
 
+
 /** QUESTION 1 **/
 
 $requete->requete1();
