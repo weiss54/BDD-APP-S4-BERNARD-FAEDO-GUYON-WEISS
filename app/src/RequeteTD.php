@@ -16,10 +16,11 @@ class RequeteTD{
     {
         echo "\n\nRequete 1\n";
         $jeu = Game::find(12342);
+        $time_start = microtime(true);
         $rq = $jeu->personnagesDuJeu()->get();
-        foreach ($rq as $value) {
-            echo "- " . $value->name . "(deck:" . $value->deck . ")\n";
-        }
+        $time_end = microtime(true);
+        $time = $time_end - $time_start;
+        echo "time : " . $time;
     }
 
     /**
@@ -27,14 +28,15 @@ class RequeteTD{
      */
     public function requete2()
     {
-        echo "\n\nRequete 2";
+        echo "\n\nRequete 2\n";
+        $time_start = microtime(true);
         $games = Game::where('name', 'like', 'Mario%')->get();
         foreach ($games as $value) {
             $resPersonnages = $value->personnagesDuJeu()->get();
-            foreach ($resPersonnages as $valuePersonnages) {
-                echo "- " . $valuePersonnages->name."\n";
-            }
         }
+        $time_end = microtime(true);
+        $time = $time_end - $time_start;
+        echo "time : " . $time;
 
     }
 
@@ -44,14 +46,15 @@ class RequeteTD{
     public function requete3()
     {
         echo "\n\nRequete 3\n";
+        $time_start = microtime(true);
         $company = Company::where('name', 'like', '%Sony%')->get();
         foreach ($company as $value) {
             $value->name;
             $resJeu = $value->jeuDeveloppeParLaCompany()->get();
-            foreach ($resJeu as $valueJeu) {
-                echo "- " . $valueJeu->name."\n";
-            }
         }
+        $time_end = microtime(true);
+        $time = $time_end - $time_start;
+        echo "time : " . $time;
 
     }
 
@@ -60,19 +63,18 @@ class RequeteTD{
      */
     public function requete4()
     {
-        echo "\n\nRequete 4";
+        echo "\n\nRequete 4\n";
+        $time_start = microtime(true);
         $games = Game::where('name', 'like', '%Mario%')->get();
         foreach($games as $game){
             $ratings = $game->ratings()->get();
-            echo "---> " . $game->name."\n";
-
             foreach($ratings as $rating){
                 $boards = $rating->ratingBoard()->get();
-                foreach($boards as $board){
-                echo " * " . $rating->name." (".$board->name.")\n";
-                }
             }
         }
+        $time_end = microtime(true);
+        $time = $time_end - $time_start;
+        echo "time : " . $time;
     }
 
     /**
@@ -81,10 +83,11 @@ class RequeteTD{
     public function requete5()
     {
         echo "\n\nRequete 5\n";
+        $time_start = microtime(true);
         $game = Game::where('name', 'like', 'Mario%')->has('personnagesDuJeu', '>', 3)->get();
-        foreach ($game as $value) {
-            echo "- " .$value->name . "\n";   
-        }
+        $time_end = microtime(true);
+        $time = $time_end - $time_start;
+        echo "time : " . $time;
     }
 
     /**
@@ -92,13 +95,14 @@ class RequeteTD{
      */
     public function requete6(){
         echo "\n\nRequete 6\n";
+        $time_start = microtime(true);
         $games = Game::where('name', 'like', 'Mario%');
         $res = $games->whereHas('ratings', function($q){
             $q->where ('name', 'like', '%3+%');
         })->get();
-        foreach($res as $game){
-            echo "---> " . $game->name."\n";
-        }
+        $time_end = microtime(true);
+        $time = $time_end - $time_start;
+        echo "time : " . $time;
     }
 
      /**
@@ -107,15 +111,16 @@ class RequeteTD{
      */
     public function requete7(){
         echo "\n\nRequete 7\n";
+        $time_start = microtime(true);
         $res = Game::whereHas('publieursDuJeu', function($q){
             $q->where ('name', 'like', '%Inc.%');
         })->whereHas('ratings', function($q){
             $q->where ('name', 'like', '%3+%');
         })->get();
+        $time_end = microtime(true);
+        $time = $time_end - $time_start;
+        echo "time : " . $time;
 
-        foreach($res as $game){
-            echo "---> " . $game->name. "\n";
-        }
     }
 
      /**
@@ -126,6 +131,7 @@ class RequeteTD{
      //Ya un pb là
     public function requete8(){
         echo "\n\nRequete 8\n";
+        $time_start = microtime(true);
         $res = Game::whereHas('publieursDuJeu', function($q){
             $q->where ('name', 'like', '%Inc.%');
         })->whereHas('ratings', function($q){
@@ -133,10 +139,10 @@ class RequeteTD{
                 $q2->where ('name', '=', 'CERO');
             });
         })->get();
+        $time_end = microtime(true);
+        $time = $time_end - $time_start;
+        echo "time : " . $time;
 
-        foreach($res as $game){
-            echo "---> " . $game->name. "\n";
-        }
     }
     
 
