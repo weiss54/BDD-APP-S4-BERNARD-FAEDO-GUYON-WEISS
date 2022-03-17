@@ -172,5 +172,17 @@ class RequeteTD{
         echo "time : " . $time;
     }
 
+    public function requeteListerJeuxNomContient($nom)
+    {
+        $time_start = microtime(true);
+        $games = Game::where('name', 'like', '%'.$nom.'%')->get();
+        foreach ($games as $value) {
+            $resPersonnages = $value->personnagesDuJeu()->get();
+        }
+        $time_end = microtime(true);
+        $time = $time_end - $time_start;
+        echo "time : " . $time;
+    }
+
 
 }
