@@ -33,4 +33,4 @@ hs_err_pid*
 out/*
 /bin/
 /vendor/
-/app/vendor
+/app/vendor/
