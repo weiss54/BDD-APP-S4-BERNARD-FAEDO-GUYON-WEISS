@@ -159,4 +159,18 @@ class RequeteTD{
         Game::find(345)->genres()->save($genre);
         echo "requete9 terminer";
     }
+
+    public function requeteListerJeuxNomDebutePar($nom)
+    {
+        $time_start = microtime(true);
+        $games = Game::where('name', 'like', $nom.'%')->get();
+        foreach ($games as $value) {
+            $resPersonnages = $value->personnagesDuJeu()->get();
+        }
+        $time_end = microtime(true);
+        $time = $time_end - $time_start;
+        echo "time : " . $time;
+    }
+
+
 }

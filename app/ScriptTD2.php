@@ -14,41 +14,23 @@ $db->bootEloquent(); //On lance Eloquent
 
 $requete = new RequeteTD();
 
-
-/** QUESTION 1 **/
+/** PARTIE I, QUESTION 1 */
 
 $requete->requete1();
-
-/** QUESTION 2 **/
-
 $requete->requete2();
-
-/** QUESTION 3 **/
-
 $requete->requete3();
-
-/** QUESTION 4 **/
-
 $requete->requete4();
-
-/** QUESTION 5 **/
-
 $requete->requete5();
-
-/** QUESTION 6 **/
-
 $requete->requete6();
-
-/** QUESTION 7 **/
-
 $requete->requete7();
-
-/** QUESTION 8 **/
-
 $requete->requete8();
-
-/** QUESTION 9 **/
-
 $requete->requete9();
 
+/** PARTIE I, QUESTION 2 */
 
+print "\n\nJeux commençant par Mario\n";
+$requete->requeteListerJeuxNomDebutePar("Mario");
+print "\nJeux commençant par Sony\n";
+$requete->requeteListerJeuxNomDebutePar("Sony");
+print "\nJeux commençant par Zelda\n";
+$requete->requeteListerJeuxNomDebutePar("Zelda");
