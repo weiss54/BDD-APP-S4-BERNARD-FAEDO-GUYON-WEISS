@@ -20,16 +20,17 @@ class RequeteTD_p2
     {
         $jeu = Game::find(12342);
         $rq = $jeu->personnagesDuJeu()->get();
-        return $rq;
+        foreach ($rq as $key => $value) {
+            echo $value->name;
+        };
     }
 
     public function requete3(){
-        $jeux = Game::select('name')->where('name', 'like', '%Mario%')->get();
+        $jeux = Game::where('name', 'like', '%Mario%')->get();
         foreach ($jeux as $key => $jeu) {
             $personnages = $jeu->personnagesPremierJeu()->get();
-            echo $personnages;
             foreach($personnages as $key => $personnage) {
-               echo $personnage->name;
+               echo $personnage->name . "\n";
             } 
         }
     }
@@ -37,10 +38,19 @@ class RequeteTD_p2
     public function requete4(){
         $jeux = Game::select('name')->where('name', 'like', '%Mario%')->get();
         foreach ($jeux as $key => $jeu) {
-            $personnages = $jeu->personnagesPremierJeu()->get();
-            echo $personnages;
+            $personnages = $jeu->personnagesDuJeu()->get();
             foreach($personnages as $key => $personnage) {
                echo $personnage->name;
+            } 
+        }
+    }
+
+    public function requete5(){
+        $companies = Company::select('name')->where('name', 'like', '%Sony%')->get();
+        foreach ($companies as $key => $companie) {
+            $jeux = $companie->jeuDeveloppeParLaCompany()->get();
+            foreach($jeux as $key => $jeu) {
+               echo $jeu->name;
             } 
         }
     }
