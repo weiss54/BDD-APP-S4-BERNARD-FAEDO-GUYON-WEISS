@@ -15,7 +15,7 @@ CREATE TABLE `Comment` (
     contenu varchar(500),
     created_at date,
     updated_at date,
-    idUser varchar(100) NOT NULL,
+    emailUser varchar(100) NOT NULL,
     idGame int(11) NOT NULL
 );
 ```
