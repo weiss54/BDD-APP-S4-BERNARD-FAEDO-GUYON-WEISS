@@ -17,7 +17,7 @@ $db->setAsGlobal();
 $db->bootEloquent(); //On lance Eloquent
 
 $faker = Faker\Factory::create();
-/*
+
 User::query()->delete();
 Comment::query()->delete();
 for ($i = 0; $i < 25000; $i++) {
@@ -38,7 +38,7 @@ for ($i = 0; $i < 25000; $i++) {
             $i--;
         }
     }
-}*/
+}
 
 $users = User::all();
 $games = Game::all();
@@ -58,3 +58,7 @@ for ($i=0; $i<25; $i++) {
     }
     echo $i."\n";
 }
+
+$requete = new RequeteTD_p2();
+
+$requete->requete1("theo.guyon@gmail.com");

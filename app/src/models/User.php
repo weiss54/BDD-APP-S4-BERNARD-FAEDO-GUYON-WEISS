@@ -11,4 +11,8 @@ class User extends \Illuminate\Database\Eloquent\Model
     protected $keyType = 'string';
 
 
+    public function commentairesUtilisateur() {
+        return $this->hasMany('app\models\Comment', 'idUser');
+    }
+
 }
