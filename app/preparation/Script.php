@@ -5,7 +5,7 @@ $faker = Faker\Factory::create();
 
 echo "### QUESTION 2\n";
 
-echo $faker->randomNumber(3, true) . " " . "Avenue " . $faker->name() . "\n" . $faker->name() . " " . $faker->randomNumber(5, true);
+echo $faker->address;
 
 echo "\n\n### QUESTION 3\n"; 
 
