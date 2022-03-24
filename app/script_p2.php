@@ -40,21 +40,20 @@ for ($i = 0; $i < 25000; $i++) {
     }
 }
 
-$users = User::all();
-$games = Game::all();
+$users = User::select('email')->get();
+$games = Game::select('id')->get();
 
-for ($i=0; $i<25; $i++) {
+for ($i=0; $i<250000; $i++) {
     $com = new Comment();
     $com->titre = $faker->sentence();
     $com->contenu = $faker->paragraph();
     $com->created_at = $faker->date();
     $com->emailUser = $users[rand(0, count($users, COUNT_NORMAL))]->email;
-    echo var_dump($users[rand(0, count($users, COUNT_NORMAL))])."\n";
     $com->idGame = $games[rand(0, count($games, COUNT_NORMAL))]->id;
     try {
         $com->save();
     } catch (Exception $e) {
-        var_dump($com);
+        $i--;
     }
     echo $i."\n";
 }
