@@ -6,11 +6,11 @@ CREATE TABLE `User` (
     nom varchar(50),
     prenom varchar(50),
     adresse varchar(200),
-    numTel int(10),
+    numTel varchar(15),
     dateNaissance date
 );
 CREATE TABLE `Comment` (
-    id int(11) primary key,
+    id int(11) primary key AUTO_INCREMENT,
     titre varchar(100),
     contenu varchar(500),
     created_at date,
