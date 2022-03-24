@@ -7,5 +7,8 @@ class User extends \Illuminate\Database\Eloquent\Model
     public $timestamps = false;
     protected $table = 'user';
     protected $primaryKey = 'email';
+    public $incrementing = false;
+    protected $keyType = 'string';
+
 
 }
