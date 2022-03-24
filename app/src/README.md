@@ -13,7 +13,8 @@ CREATE TABLE `Comment` (
     id int(11) primary key,
     titre varchar(100),
     contenu varchar(500),
-    dateCreation date,
+    created_at date,
+    updated_at date,
     idUser varchar(100) NOT NULL,
     idGame int(11) NOT NULL
 );
