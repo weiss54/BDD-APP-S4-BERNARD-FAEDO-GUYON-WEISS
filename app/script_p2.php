@@ -22,11 +22,11 @@ User::query()->delete();
 Comment::query()->delete();
 for ($i = 0; $i < 25000; $i++) {
     $user = new User();
-    $user->nom = $faker->unique()->lastName();
-    $user->prenom = $faker->unique()->firstName();
+    $user->nom = $faker->lastName();
+    $user->prenom = $faker->firstName();
     $user->email = strtolower($user->prenom) . "." . strtolower($user->nom) . "@" . $faker->freeEmailDomain();
     $user->adresse = $faker->address();
-    $user->numTel = $faker->e164PhoneNumber();
+    $user->numTel = $faker->phoneNumber();
     $user->dateNaissance = $faker->date();
     try {
         $user->save();
@@ -48,16 +48,16 @@ for ($i=0; $i<250000; $i++) {
     $com->titre = $faker->sentence();
     $com->contenu = $faker->paragraph();
     $com->created_at = $faker->date();
-    $com->emailUser = $users[rand(0, count($users, COUNT_NORMAL))]->email;
-    $com->idGame = $games[rand(0, count($games, COUNT_NORMAL))]->id;
+    $com->emailUser = $users[rand(0, count($users, COUNT_NORMAL)-1)]->email;
+    $com->idGame = $games[rand(0, count($games, COUNT_NORMAL))-1]->id;
     try {
         $com->save();
     } catch (Exception $e) {
         $i--;
     }
-    echo $i."\n";
 }
 
 $requete = new RequeteTD_p2();
 
-$requete->requete1("theo.guyon@gmail.com");
+$requete->requete1($users[0]);
+$requete->requete2();
