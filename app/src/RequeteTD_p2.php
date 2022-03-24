@@ -18,7 +18,16 @@ class RequeteTD_p2
             echo $value->created_at;
             echo '\n';
         }
+    }
 
+    public function requete2() {
+        $res = User::select('email')->get();
+        foreach($res as $key => $value){
+            $compter = count(Comment::where('iduser', '=', $value)->get());
+            if ($compter >= 5) {
+                echo $value->nom.$value->prenom;
+            }
+        }
     }
 
     /*
