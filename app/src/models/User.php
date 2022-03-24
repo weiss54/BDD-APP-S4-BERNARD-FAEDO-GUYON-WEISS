@@ -9,5 +9,8 @@ class User extends \Illuminate\Database\Eloquent\Model
     protected $table = 'user';
     protected $primaryKey = 'email';
 
-    
+    public function commentairesUtilisateur() {
+        return $this->hasMany('app\models\Comment', 'idUser');
+    }
+
 }

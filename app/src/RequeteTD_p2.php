@@ -2,15 +2,20 @@
 
 namespace app;
 
-use app\models\Game;
-use app\models\Company;
-use app\models\Platform;
+use app\models\User;
+use app\models\Comment;
 
 use Illuminate\Database\Capsule\Manager as DB;
 
 class RequeteTD_p2
 {
 
+    public function requet1($userId) {
+        $res = Comment::where('idUser', '=', $userId);
+        
+    }
+
+    /*
     public function requete1() {
         $res = Game::select('name')->where('name', 'like', '%Mario%')->get();
         
@@ -55,7 +60,7 @@ class RequeteTD_p2
         }
     }
 
-    /*public function requete2(){
+    public function requete2(){
         return Company::select('name')->where('location_country', '=', 'Japan')->get();
     }
 
