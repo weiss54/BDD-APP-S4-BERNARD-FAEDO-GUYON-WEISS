@@ -10,9 +10,15 @@ use Illuminate\Database\Capsule\Manager as DB;
 class RequeteTD_p2
 {
 
-    public function requet1($userId) {
-        $res = Comment::where('idUser', '=', $userId);
-        
+    public function requete1($userId) {
+        $res = Comment::where('idUser', '=', $userId)->sortBy('created_at')->get();
+        foreach($res as $key => $value){
+            echo $value->titre;
+            echo $value->contenu;
+            echo $value->created_at;
+            echo '\n';
+        }
+
     }
 
     /*
