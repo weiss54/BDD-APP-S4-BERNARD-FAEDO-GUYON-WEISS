@@ -1,8 +1,31 @@
-###Preparation td4
+### Preparation td5-6
 
-# Comment installer faker ?
-    On peut l'installer avec composer grace à la commande : composer require fakerphp/faker
+## dans quels cas json_encode() retourne une chaine correspondant à un obejt ou un tableau JSON ?
 
-# Donnez un exemple de code pour générer une adresse américaine en utilisant faker
-    echo $faker->randomNumber(3, false) . " " . "Avenue " . $faker->name() . "\n" . $faker->name() . " " . $faker->randomNumber(5, false)
+# Si l'array php est associative alors la méthode renvoie un objet JSON
+    ```php
+    echo json_encode(array("Peter"=>35, "Ben"=>37, "Joe"=>43));
+    ```
 
+    Résultat:
+    {"Peter":35,"Ben":37,"Joe":43}
+
+# Sinon elle renvoie une array JSON
+    ```php
+    echo json_encode(array("Volvo", "BMW", "Peugeot"));
+    ```
+
+    Résultat:
+    ["Volvo","BMW","Toyota"]
+
+## Comment accède-t-on aux données transmises dans la requête ?
+
+# Pour acceder au données du corps de la requete :
+    ```php
+    $rq->getParsedBodyParam('param');
+    ```
+
+# Pour acceder au données de l'url de la requete :
+    ```php
+    $args['param']
+    ```
