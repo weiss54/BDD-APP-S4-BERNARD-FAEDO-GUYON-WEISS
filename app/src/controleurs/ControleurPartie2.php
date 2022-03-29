@@ -32,6 +32,14 @@ class ControleurPartie2 {
 
         $games = Game::skip(($page-1)*200)->take($page*200)->get();
 
+        foreach ($games as $key => $value) {
+            $value["links"] = [
+                "self" => array(
+                    "href" => "api/games/$value->id"
+                )
+            ];
+        }
+
         $prochPage = $page + 1;
         $precPage = $page - 1;
 
