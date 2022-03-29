@@ -46,7 +46,7 @@ class ControleurPartie1 {
         );
         $links = array("comments"=>array("href"=>"/api/games/".$args['id']."/comments"), "characters"=>array("href"=>"/api/games/".$args['id']."/characters"));
         $tabFinal = array("game"=>$tabGame, "links"=>$links);
-        return $rs->withJson($tabFinal);
+        return $rs->withJson($tabFinal, 201, JSON_PRETTY_PRINT);
 
     }
 }
