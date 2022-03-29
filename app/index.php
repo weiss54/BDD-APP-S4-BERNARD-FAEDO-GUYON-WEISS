@@ -26,13 +26,13 @@ $app->get('/', function( $rq, $rs, $args ) {
 });
 
 $app->get('/api/games/{id}[/]', function( $rq, $rs, $args ) {
-    $cont= new ControleurJeu($this);
+    $cont= new ControleurPartie1($this);
 
     return $cont->getPage( $rq, $rs, $args );
 });
 
-$app->get('/api/games/{id}[/]', function( $rq, $rs, $args ) {
-    $cont= new ControleurJeu($this);
+$app->get('/api/games[/]', function( $rq, $rs, $args ) {
+    $cont= new ControleurPartie1($this);
 
     return $cont->getPage( $rq, $rs, $args );
 
