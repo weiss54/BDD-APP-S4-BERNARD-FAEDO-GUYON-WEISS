@@ -21,4 +21,5 @@ CREATE TABLE `Comment` (
 ```
 ## Aller voir le script 'script_p1.php'
 #TD4 PARTIE II
-#
+## Aller voir le script 'script_p2.php' et les fichiers associés.
+
