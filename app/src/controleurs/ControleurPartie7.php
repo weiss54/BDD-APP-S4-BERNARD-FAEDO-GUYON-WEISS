@@ -24,15 +24,17 @@ class ControleurPartie7 {
         $game = Game::where('id', '=', $args['id'])->first();
         $characters = $game->personnagesDuJeu()->get();
 
-        foreach ($characters as $key => $value) {
-            $value["links"] = [
+        $charactersRes = array();
+
+        foreach ($characters as $value) {
+            array_push($charactersRes, array("character" => $value, "links" => [
                 "self" => array(
                     "href" => "api/characters/$value->id"
                 )
-            ];
+            ]));
         }
 
-        $res = array("characters" => $characters);
+        $res = array("characters" => $charactersRes);
         
         return $rs->withJson($res, 201, JSON_PRETTY_PRINT);
 
