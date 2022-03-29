@@ -9,6 +9,7 @@ require 'vendor/autoload.php';
 
 use app\controleurs\ControleurPartie1;
 use app\controleurs\ControleurPartie2;
+use app\controleurs\ControleurPartie7;
 
 $c = new \Slim\Container(['settings'=>['displayErrorDetails'=>true]]);
 
@@ -34,9 +35,13 @@ $app->get('/api/games/{id}[/]', function( $rq, $rs, $args ) {
 $app->get('/api/games[/]', function( $rq, $rs, $args ) {
     $cont= new ControleurPartie2($this);
 
-    return $cont->getPage( $rq, $rs, $args );
+    return $cont->getPage( $rq, $rs, $args );  
+});
 
-    
+$app->get('/api/games/{id}/characters', function( $rq, $rs, $args ) {
+    $cont= new ControleurPartie7($this);
+
+    return $cont->getPage( $rq, $rs, $args );  
 });
 
 $app->run();
