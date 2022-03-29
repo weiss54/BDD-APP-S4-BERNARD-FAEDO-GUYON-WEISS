@@ -3,7 +3,8 @@ namespace app\controleurs;
 
 require 'vendor/autoload.php';
 
-use app\vues\VueRequete;
+
+use app\models\Game;
 
 use app\autres\ConnectionFactory;
 
@@ -20,7 +21,7 @@ class ControleurPartie1 {
     public function getPage($rq, $rs, $args) {
         $db = ConnectionFactory::creerConnection();
 
-        $game = $db->table('game')->where('id', '=', $args['id'])->first();
+        $game = Game::where('id', '=', $args['id'])->first();
         
         return $rs->withJson($game);
 
