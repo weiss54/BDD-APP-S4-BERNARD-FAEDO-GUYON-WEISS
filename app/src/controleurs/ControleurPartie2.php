@@ -24,7 +24,7 @@ class ControleurPartie2 {
 
         $page;
 
-        if($q == null){
+        if($q == null || $q < 1){
             $page = 1;
         }else{
             $page = $q;
@@ -32,7 +32,12 @@ class ControleurPartie2 {
 
         $games = Game::skip(($page-1)*200)->take($page*200)->get();
 
-        $res = array("games" => $games);
+        $prochPage = $page + 1;
+        $precPage = $page - 1;
+
+        $links = array("prev" => "/api/games?page=$precPage", "next" =>  "/api/games?page=$prochPage");
+
+        $res = array("games" => $games, "links" => $links);
         
         return $rs->withJson($res, 201, JSON_PRETTY_PRINT);
 
