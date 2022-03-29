@@ -32,21 +32,18 @@ class ControleurPartie2 {
 
         //Partie 2-3
         //On récupère les jeux
-        $games = Game::skip(($page-1)*200)->take($page*200)->get();
+        $games = Game::skip(($page-1)*200)->take(200)->get();
 
-        $gamesRes = array('games' => array(), 'links' => array());
+        $gamesRes = array();
 
         //Partie 4
         //On ajoute les liens pour retrouver la page du produit
-        foreach ($games as $key => $value) {
-            array_push($gamesRes['games'], $value);
-            array_push($gamesRes['links'], 
-            $value["links"] = [
+        foreach ($games as $value) {
+            array_push($gamesRes, array("game" => $value, "links" => [
                 "self" => array(
                     "href" => "api/games/$value->id"
                 )
-            ]);
-            
+            ]));
         }
 
         //Partie 3
