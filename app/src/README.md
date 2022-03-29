@@ -19,3 +19,6 @@ CREATE TABLE `Comment` (
     idGame int(11) NOT NULL
 );
 ```
+## Aller voir le script 'script_p1.php'
+#TD4 PARTIE II
+#

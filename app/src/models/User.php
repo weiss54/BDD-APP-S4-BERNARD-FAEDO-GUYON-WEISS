@@ -12,7 +12,7 @@ class User extends \Illuminate\Database\Eloquent\Model
 
 
     public function commentairesUtilisateur() {
-        return $this->hasMany('app\models\Comment', 'idUser');
+        return $this->hasMany('app\models\Comment', 'emailUser');
     }
 
 }
