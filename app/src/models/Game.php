@@ -32,4 +32,8 @@ class Game extends \Illuminate\Database\Eloquent\Model
     public function publieursDuJeu(){
         return $this->belongsToMany('app\models\Company', 'game_publishers', 'game_id', 'comp_id');
     }
+
+    public function plateformes() {
+        return $this->belongsToMany('app\models\Platform', 'game2platform', 'game_id', 'platform_id');
+    }
 }
