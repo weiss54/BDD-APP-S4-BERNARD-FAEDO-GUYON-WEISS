@@ -3,11 +3,11 @@ namespace app\controleurs;
 
 require 'vendor/autoload.php';
 
-use app\vues\VueRequete;
+use app\models\Game;
 
 use app\autres\ConnectionFactory;
 
-class ControleurPartie1 {
+class ControleurPartie2 {
 
     private $container;
 
@@ -20,9 +20,21 @@ class ControleurPartie1 {
     public function getPage($rq, $rs, $args) {
         $db = ConnectionFactory::creerConnection();
 
-        $game = Game::where('id', '=', $args['id'])->first();
+        $q = $rq->getQueryParam('page');
+
+        $page;
+
+        if($q == null){
+            $page = 1;
+        }else{
+            $page = $q;
+        }
+
+        $games = Game::skip(($page-1)*200)->take($page*200)->get();
+
+        $res = array("games" => $games);
         
-        return $rs->withJson($game);
+        return $rs->withJson($res, 201, JSON_PRETTY_PRINT);
 
     }
 }

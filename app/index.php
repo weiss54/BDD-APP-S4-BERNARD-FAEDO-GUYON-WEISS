@@ -32,7 +32,7 @@ $app->get('/api/games/{id}[/]', function( $rq, $rs, $args ) {
 });
 
 $app->get('/api/games[/]', function( $rq, $rs, $args ) {
-    $cont= new ControleurPartie1($this);
+    $cont= new ControleurPartie2($this);
 
     return $cont->getPage( $rq, $rs, $args );
 

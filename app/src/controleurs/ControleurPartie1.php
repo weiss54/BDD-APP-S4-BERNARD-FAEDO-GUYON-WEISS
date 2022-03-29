@@ -23,7 +23,7 @@ class ControleurPartie1 {
 
         $game = Game::where('id', '=', $args['id'])->first();
         
-        return $rs->withJson($game);
+        return $rs->withJson($game, 201, JSON_PRETTY_PRINT);
 
     }
 }
