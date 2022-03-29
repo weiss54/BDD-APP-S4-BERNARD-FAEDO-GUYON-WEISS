@@ -21,7 +21,7 @@ class ControleurPartie5 {
 
         $tabCommentaire = [];
 
-        $comments = $db->table('comment')->where('idGame', '=', 2)->get();
+        $comments = $db->table('comment')->where('idGame', '=', $args['id'])->get();
         foreach ($comments as $com) {
             $commentObj = array("id"=>$com->id, "titre"=>$com->titre, "texte"=>$com->contenu, "date_creation"=>$com->created_at, "user"=>$com->emailUser);
             $tabCommentaire[] = $commentObj;
