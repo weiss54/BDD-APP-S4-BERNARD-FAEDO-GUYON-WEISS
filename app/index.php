@@ -7,18 +7,8 @@
 
 require 'vendor/autoload.php';
 
-
-use \Psr\Http\Message\ServerRequestInterface as Request;
-use \Psr\Http\Message\ResponseInterface as Response;
-
-use teezer\controleurs\AccueilController;
-use teezer\controleurs\JouerPartieController;
-use teezer\controleurs\AddScoreController;
-use teezer\controleurs\CreerPartieController;
-use teezer\controleurs\PartieFinieController;
-
-use teezer\autres\IntegrateurBdd;
-use teezer\autres\FonctionsBdd;
+use app\controleurs\ControleurPartie1;
+use app\controleurs\ControleurPartie2;
 
 $c = new \Slim\Container(['settings'=>['displayErrorDetails'=>true]]);
 
@@ -28,11 +18,7 @@ $app = new \Slim\App($c);
  * ROUTE PAGE ACCUEIL
  */
 $app->get('/', function( $rq, $rs, $args ) {
-    IntegrateurBdd::$dbconfig = parse_ini_file("db.config.ini");
-
-    $cont= new AccueilController($this) ;
-
-   
+    $cont= new ControleurJeu($this);
 
     return $cont->getPage( $rq, $rs, $args );
 
@@ -40,8 +26,13 @@ $app->get('/', function( $rq, $rs, $args ) {
 });
 
 $app->get('/api/games/{id}[/]', function( $rq, $rs, $args ) {
-    IntegrateurBdd::$dbconfig = parse_ini_file("db.config.ini");
-    $cont= new AccueilController($this);
+    $cont= new ControleurJeu($this);
+
+    return $cont->getPage( $rq, $rs, $args );
+});
+
+$app->get('/api/games/{id}[/]', function( $rq, $rs, $args ) {
+    $cont= new ControleurJeu($this);
 
     return $cont->getPage( $rq, $rs, $args );
 
