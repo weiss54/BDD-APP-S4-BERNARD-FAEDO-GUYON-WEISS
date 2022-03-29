@@ -11,6 +11,7 @@ use app\controleurs\ControleurPartie1;
 use app\controleurs\ControleurPartie2;
 use app\controleurs\ControleurPartie7;
 use app\controleurs\ControleurPartie5;
+use app\controleurs\ControleurPartie8;
 
 $c = new \Slim\Container(['settings'=>['displayErrorDetails'=>true]]);
 
@@ -49,5 +50,14 @@ $app->get('/api/games/{id}/comments[/]', function( $rq, $rs, $args ) {
     $cont= new ControleurPartie5($this);
     return $cont->getPage( $rq, $rs, $args );
 });
+
+/**
+ * Partie 8
+ */
+$app->post('/api/games/{id}/comments[/]', function( $rq, $rs, $args ) {
+    $cont= new ControleurPartie8($this);
+    return $cont->getPage( $rq, $rs, $args );
+});
+
 
 $app->run();
